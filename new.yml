@@ -32,5 +32,10 @@
               name: haproxy
               state: reloaded
 
+           - name: restart nginx
+             service:
+                     name: nginx
+                     state: reloaded
+
 
 
