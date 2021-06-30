@@ -177,6 +177,18 @@
              command: grunt eslint
              command: grunt test --force
 
+           - name: copy the gooru web folder to /var/www location
+             become: yes
+             become_user: root
+             copy:
+                     src: /opt/build/Gooru-FE/gooru-web
+                     dest: /var/www/
+                     recurse: yes
+
+           - name: replace json file
+             become: yes
+             become_user: root
+             template: src=/home/karan/gooru-fe/nile.usalearning.net.json  dest=/var/www/gooru-web/config/nile.usalearning.net.json
 
 
 
